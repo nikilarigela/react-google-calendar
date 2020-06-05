@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
-import BigCalendar from 'react-big-calendar'
+import { Calendar, momentLocalizer } from "react-big-calendar";
 import moment from 'moment'
 
 import 'react-big-calendar/lib/css/react-big-calendar.css'
 import googleAPI from  "./utils/googleAPI"
 
-const localizer = BigCalendar.momentLocalizer(moment)
+const localizer = momentLocalizer(moment)
 
 export default class Calendar extends Component {
   constructor(props) {
@@ -33,7 +33,7 @@ export default class Calendar extends Component {
 
   render = () =>
     <div>
-      <BigCalendar
+      <Calendar
         localizer={localizer}
         events={this.state.events}
         style={{ height: "100vh" }} />
